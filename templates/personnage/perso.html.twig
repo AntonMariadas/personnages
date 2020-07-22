@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %} Personnage {{ perso.nom }} {% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-2">
+        <img src="{{asset('images/personnages/' ~ perso.nom ~ '.png')}}" alt="">
+    </div>
+    <div class="col">
+        <h2>{{ perso.nom }}</h2>
+        <div>
+            {% if perso.sexe %}
+                Homme
+            {% else %}
+                Femme
+            {% endif %}
+        </div>
+    <h3>Les caractéristiques</h3>
+    <ul>
+        <li>Force : {{perso.carac.force}}</li>
+        <li>Agilité : {{perso.carac.agi}}</li>
+        <li>Intelligence : {{perso.carac.intel}}</li>
+    </ul>
+    </div>
+</div>
+
+{% endblock %}
